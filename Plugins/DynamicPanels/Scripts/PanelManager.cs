@@ -10,6 +10,7 @@ namespace DynamicPanels
 	public enum Direction { None = -1, Left = 0, Top = 1, Right = 2, Bottom = 3 };
 
 	[DisallowMultipleComponent]
+	[DefaultExecutionOrder(-80)]
 	public class PanelManager : MonoBehaviour
 	{
 		public const int NON_EXISTING_TOUCH = -98765;
