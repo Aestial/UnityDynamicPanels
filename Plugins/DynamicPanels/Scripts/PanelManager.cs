@@ -13,6 +13,8 @@ namespace DynamicPanels
 	[DefaultExecutionOrder(-80)]
 	public class PanelManager : MonoBehaviour
 	{
+		public static readonly string PreviewPanelPrefabResourcePath = "DynamicPanelPreview";
+
 		public const int NON_EXISTING_TOUCH = -98765;
 		private const float PANEL_TABS_VALIDATE_INTERVAL = 5f;
 
@@ -39,6 +41,13 @@ namespace DynamicPanels
 
 		private float nextPanelValidationTime;
 		private PointerEventData nullPointerEventData;
+
+		[SerializeField] RectTransform previewPanelPrefab;
+		[SerializeField] Panel panelPrefab;
+		[SerializeField] PanelTab panelTabPrefab;
+
+		public Panel PanelPrefab => panelPrefab;
+		public PanelTab PanelTabPrefab => panelTabPrefab;
 
 		private void Awake()
 		{
@@ -560,7 +569,15 @@ namespace DynamicPanels
 
 		private void InitializePreviewPanel()
 		{
-			RectTransform previewPanel = Instantiate( Resources.Load<RectTransform>( "DynamicPanelPreview" ) );
+			RectTransform previewPanel;
+			if (previewPanelPrefab != null)
+			{
+				previewPanel = Instantiate(previewPanelPrefab);
+			}
+			else
+			{
+				previewPanel = Instantiate(Resources.Load<RectTransform>(PreviewPanelPrefabResourcePath));
+			}
 			previewPanel.gameObject.name = "DraggedPanelPreview";
 
 			previewPanel.anchorMin = new Vector2( 0.5f, 0.5f );

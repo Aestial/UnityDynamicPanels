@@ -8,6 +8,8 @@ namespace DynamicPanels
 	[DisallowMultipleComponent]
 	public class Panel : MonoBehaviour, IPanelGroupElement
 	{
+		public static readonly string PanelTabPrefabResourcePath = "DynamicPanelTab";
+
 		internal class InternalSettings
 		{
 			private readonly Panel panel;
@@ -455,7 +457,15 @@ namespace DynamicPanels
 				PanelTab tab = PanelUtils.GetAssociatedTab( tabContent );
 				if( !tab )
 				{
-					tab = (PanelTab) Instantiate( Resources.Load<PanelTab>( "DynamicPanelTab" ), tabsParent, false );
+					var tabPrefab = PanelManager.Instance.PanelTabPrefab;
+					if (tabPrefab != null)
+					{
+						tab = (PanelTab) Instantiate( tabPrefab, tabsParent, false );
+					}
+					else
+					{
+						tab = (PanelTab) Instantiate( Resources.Load<PanelTab>(PanelTabPrefabResourcePath), tabsParent, false );
+					}
 					tabs.Insert( tabIndex, tab );
 
 					tabContent.anchorMin = Vector2.zero;
