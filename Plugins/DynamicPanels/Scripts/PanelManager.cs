@@ -42,9 +42,9 @@ namespace DynamicPanels
 		private float nextPanelValidationTime;
 		private PointerEventData nullPointerEventData;
 
-		[SerializeField] RectTransform previewPanelPrefab;
 		[SerializeField] Panel panelPrefab;
 		[SerializeField] PanelTab panelTabPrefab;
+		[SerializeField] RectTransform previewPanelPrefab;
 
 		public Panel PanelPrefab => panelPrefab;
 		public PanelTab PanelTabPrefab => panelTabPrefab;
