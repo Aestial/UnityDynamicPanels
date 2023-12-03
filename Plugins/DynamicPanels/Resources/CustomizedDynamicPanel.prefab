@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114614089418798928}
   - component: {fileID: 114843194787698652}
   m_Layer: 5
-  m_Name: DynamicPanel
+  m_Name: CustomizedDynamicPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  m_Color: {r: 0.14117648, g: 0.14117648, b: 0.14117648, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
+  m_Color: {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
+  m_Color: {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -283,9 +283,9 @@ MonoBehaviour:
   contentParent: {fileID: 224556564501171762}
   closeButton: {fileID: 114270162404285248}
   headerHeight: 42
-  m_tabNormalColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
+  m_tabNormalColor: {r: 0.14117648, g: 0.14117648, b: 0.14117648, a: 1}
   m_tabNormalTextColor: {r: 0.83823526, g: 0.84439874, b: 0.84439874, a: 1}
-  m_tabSelectedColor: {r: 0.375, g: 0.375, b: 0.375, a: 1}
+  m_tabSelectedColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_tabSelectedTextColor: {r: 0.83823526, g: 0.84439874, b: 0.84439874, a: 1}
   m_tabDetachingColor: {r: 0, g: 0.4855985, b: 0.5294118, a: 1}
   m_tabDetachingTextColor: {r: 0.83823526, g: 0.84439874, b: 0.84439874, a: 1}
