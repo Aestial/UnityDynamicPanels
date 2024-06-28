@@ -247,29 +247,86 @@ namespace DynamicPanels
 		[SerializeField]
 		private float headerHeight = 50f;
 
-		[SerializeField]
-		private Color m_tabNormalColor;
-		public Color TabNormalColor { get { return m_tabNormalColor; } }
+		[SerializeField] private Color tabNormalColor;
 
-		[SerializeField]
-		private Color m_tabNormalTextColor;
-		public Color TabNormalTextColor { get { return m_tabNormalTextColor; } }
+		public Color TabNormalColor
+		{
+			get => tabNormalColor;
+			set
+			{
+				tabNormalColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
 
-		[SerializeField]
-		private Color m_tabSelectedColor;
-		public Color TabSelectedColor { get { return m_tabSelectedColor; } }
+		[SerializeField] private Color tabNormalTextColor;
 
-		[SerializeField]
-		private Color m_tabSelectedTextColor;
-		public Color TabSelectedTextColor { get { return m_tabSelectedTextColor; } }
+		public Color TabNormalTextColor
+		{
+			get => tabNormalTextColor;
+			set
+			{
+				tabNormalTextColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
 
-		[SerializeField]
-		private Color m_tabDetachingColor;
-		public Color TabDetachingColor { get { return m_tabDetachingColor; } }
+		[SerializeField] private Color tabSelectedColor;
 
-		[SerializeField]
-		private Color m_tabDetachingTextColor;
-		public Color TabDetachingTextColor { get { return m_tabDetachingTextColor; } }
+		public Color TabSelectedColor
+		{
+			get => tabSelectedColor;
+			set
+			{
+				tabSelectedColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
+
+		[SerializeField] private Color tabSelectedTextColor;
+
+		public Color TabSelectedTextColor
+		{
+			get => tabSelectedTextColor;
+			set
+			{
+				tabSelectedTextColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
+
+		[SerializeField] private Color tabDetachingColor;
+		
+		public Color TabDetachingColor
+		{
+			get => tabDetachingColor;
+			set
+			{
+				tabDetachingColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
+
+		[SerializeField] private Color tabDetachingTextColor;
+
+		public Color TabDetachingTextColor
+		{
+			get => tabDetachingTextColor;
+			set
+			{
+				tabDetachingTextColor = value;
+				ResetTabsBackgroundColor();
+			}
+		}
+
+		private void ResetTabsBackgroundColor()
+		{
+			foreach (var tab in tabs)
+			{
+				tab.ResetBackgroundColor();
+			}
+		}
+		
 #pragma warning restore 0649
 
 		public Vector2 Position { get { return RectTransform.anchoredPosition; } }
