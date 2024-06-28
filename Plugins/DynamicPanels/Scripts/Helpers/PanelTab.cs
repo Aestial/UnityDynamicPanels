@@ -242,17 +242,19 @@ namespace DynamicPanels
 			PanelNotificationCenter.Internal.TabDragStateChanged( this, false );
 		}
 
-		private void ResetBackgroundColor()
+		public void ResetBackgroundColor()
 		{
 			if( m_panel.ActiveTab == m_panel.GetTabIndex( this ) )
 			{
 				background.color = m_panel.TabSelectedColor;
 				nameHolder.color = m_panel.TabSelectedTextColor;
+				iconHolder.color = m_panel.TabSelectedTextColor;
 			}
 			else
 			{
 				background.color = m_panel.TabNormalColor;
 				nameHolder.color = m_panel.TabNormalTextColor;
+				iconHolder.color = m_panel.TabNormalTextColor;
 			}
 		}
 	}

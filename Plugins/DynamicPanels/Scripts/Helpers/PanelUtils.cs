@@ -6,6 +6,8 @@ namespace DynamicPanels
 	{
 		internal static class Internal
 		{
+			public static readonly string PanelPrefabResourcePath = "DynamicPanel";
+
 			public static Panel CreatePanel( RectTransform content, DynamicPanelsCanvas canvas )
 			{
 				bool canvasWasNull = canvas == null;
@@ -35,7 +37,15 @@ namespace DynamicPanels
 
 				if( result == null )
 				{
-					result = (Panel) Object.Instantiate( Resources.Load<Panel>( "DynamicPanel" ), canvas.RectTransform, false );
+					var panelPrefab = PanelManager.Instance.PanelPrefab;
+					if (panelPrefab != null)
+					{
+						result = (Panel) Object.Instantiate( panelPrefab, canvas.RectTransform, false );
+					}
+					else
+					{
+						result = (Panel) Object.Instantiate( Resources.Load<Panel>(PanelPrefabResourcePath), canvas.RectTransform, false );
+					}
 					result.gameObject.name = "DynamicPanel";
 					result.RectTransform.SetAsLastSibling();
 

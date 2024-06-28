@@ -12,6 +12,7 @@ using UnityEngine.UI;
 namespace DynamicPanels
 {
 	[DisallowMultipleComponent]
+	[DefaultExecutionOrder(-75)]
 	public class DynamicPanelsCanvas : MonoBehaviour, IPointerEnterHandler, ISerializationCallbackReceiver
 	{
 		internal class InternalSettings
